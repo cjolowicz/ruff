@@ -1,21 +1,91 @@
+:root {
+  --bg-color: rgb(255, 255, 255);
+  --border-color: rgb(0, 0, 0);
+}
+
 * {
   box-sizing: border-box;
 }
 
 body,
 html,
-#root,
-#app {
+#root {
   margin: 0;
   height: 100%;
   width: 100%;
 }
 
-#app {
-  display: flex;
+.App {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  inset: 0;
 }
 
-.options {
+.Header {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 8px;
+  padding-right: 8px;
+  height: 48px;
+  background-color: var(--bg-color);
+  border-bottom: 1px solid rgb(52, 52, 52);
+  color: rgb(255, 255, 255);
+}
+
+.Nav {
+  position: fixed;
+  top: 48px;
+  bottom: 0;
+  left: 0;
+  padding: 8px;
+  width: 58px;
+  border-right: 1px solid var(--border-color);
+  height: 100%;
+  color: rgb(153, 153, 153);
+  font-size: 1.4rem;
+  background-color: var(--bg-color);
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+}
+
+.IconButton {
+  height: 36px;
+  width: 40px;
+  color: rgb(149, 157, 165);
+  cursor: pointer;
+  background: transparent;
+  border: 0;
+  border-radius: 2px;
+  box-sizing: border-box;
+  padding: 0;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.IconButton:hover {
+  background: rgb(27, 31, 35);
+}
+
+.Body {
+  display: flex;
+  height: 100%;
+  width: initial;
+}
+
+.Editor {
+  position: fixed;
+  inset: 48px 0 0 58px;
+  height: auto;
+  z-index: 9;
+}
+
+.Options {
   height: 100vh;
   overflow-y: scroll;
   padding: 1em;
@@ -23,33 +93,29 @@ html,
   border-right: 1px solid lightgray;
 }
 
-.options ul {
+.Options ul {
   padding-left: 1em;
   list-style-type: none;
 }
 
-.options li {
+.Options li {
   margin-bottom: 0.3em;
 }
 
-.options details {
+.Options details {
   margin-bottom: 1em;
 }
 
-.options summary {
+.Options summary {
   font-size: 1.3rem;
 }
 
-.options input {
+.Options input {
   display: block;
   width: 100%;
 }
 
-.editor {
-  padding: 1em;
-}
-
-#error {
+.Error {
   position: fixed;
   bottom: 0;
   width: 100%;
